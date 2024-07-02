@@ -6,15 +6,9 @@ import cors from 'cors';
 dotenv.config();
 
 const app = express();
-const port = 3000;
+const port = 3030;
 
-// Enable CORS
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://probable-spoon-4q45pgjj69w37rv9-3000.app.github.dev');
-  // Add other CORS headers if needed
-  next();
-});
-
+app.use(cors());
 
 const uri = process.env.MONGODB_URI;
 if (!uri) {
